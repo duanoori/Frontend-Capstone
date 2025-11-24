@@ -1,11 +1,18 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import BookingPage from "./components/BookingPage";
 
 function App() {
   return (
-    <div>
-      Homepage
+    <>
+      <Router>
+        <Routes>
 
-    </div>
+          <Route path="/" element={<BookingPage />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
