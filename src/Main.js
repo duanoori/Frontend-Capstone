@@ -1,3 +1,4 @@
+import fetchAPI from "./api";
 import React, {useReducer} from "react";
 import BookingPage from "./components/BookingPage";
 
@@ -25,3 +26,4 @@ function Main() {
         </div>
     );
 }
+export default Main;
