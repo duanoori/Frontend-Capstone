@@ -26,4 +26,4 @@ const submitAPI = function(formData) {
     return true;
 };
 
-export default fetchAPI;
+export {fetchAPI, submitAPI};
