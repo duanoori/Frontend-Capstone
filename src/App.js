@@ -1,7 +1,5 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import BookingPage from "./components/BookingPage";
+import Main from './Main';
 
 function App() {
   return (
