@@ -2,12 +2,14 @@ import React, {useReducer} from "react";
 import BookingPage from "./components/BookingPage";
 
 function initializeTimes() {
-    return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+    const today = new Date();
+    return fetchAPI(today);
 }
 
 function updateTimes(state, action) {
     if (action.type === 'UPDATE_TIMES') {
-        return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+        const newDate = new Date(action.date);
+        return fetchAPI(newDate);
     }
     return state;
 }
