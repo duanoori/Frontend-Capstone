@@ -42,22 +42,26 @@ function BookingForm({ availableTimes, dispatch , submitForm}) {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+      className="max-w-md mx-auto p-6 bg-white shadow-md rounded space-y-4"
     >
-      <label htmlFor="res-date">Choose date</label>
+      <label htmlFor="res-date" className="block font-semibold">
+        Choose date</label>
       <input
         type="date"
         id="res-date"
         value={date}
         onChange= {handleDateChange}
+        className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
         required
       />
 
-      <label htmlFor="res-time">Choose time</label>
+      <label htmlFor="res-time" className="block font-semibold">
+        Choose time</label>
       <select
         id="res-time"
         value={time}
         onChange={(e) => setTime(e.target.value)}
+        className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
         required
       >
         <option value="">Select...</option>
@@ -66,7 +70,8 @@ function BookingForm({ availableTimes, dispatch , submitForm}) {
         ))}
       </select>
 
-      <label htmlFor="guests">Number of guests</label>
+      <label htmlFor="guests" className="block font-semibold">
+        Number of guests</label>
       <input
         type="number"
         id="guests"
@@ -74,21 +79,32 @@ function BookingForm({ availableTimes, dispatch , submitForm}) {
         max="10"
         value={guests}
         onChange={(e) => setGuests(e.target.value)}
+        className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
         required
       />
 
-      <label htmlFor="occasion">Occasion</label>
+      <label htmlFor="occasion" className="block font-semibold">
+        Occasion</label>
       <select
         id="occasion"
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
+        className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
         required
       >
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
 
-      <button type="submit" disabled={!formValid} aria-label="On Click">
+      <button type="submit" 
+      disabled={!formValid} 
+      aria-label="On Click"
+      className={`w-full py-2 px-4 font-bold rounded text-white transition-colors ${
+          formValid
+            ? "bg-yellow-400 hover:bg-yellow-500"
+            : "bg-gray-300 cursor-not-allowed"
+        }`}
+      >
         Submit reservation</button>
     </form>
   );
