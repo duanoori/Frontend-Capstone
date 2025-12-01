@@ -8,21 +8,21 @@ This project was created using Create React App, styled with Tailwind CSS, teste
 
 ## Features
 
-Booking Form
+### Booking Form
 
 - Select reservation date, time, number of guests, and occasion
 - Available times update dynamically based on selected date
 - Client-side + HTML5 validation
 - Submit button auto-enables only when form is valid
 
-Form Validation
+### Form Validation
 
 - Required fields enforced
 - Guest count between 1–10
 - Invalid inputs disable the submit button
 - Fully tested with unit tests
 
-Accessibility
+### Accessibility
 
 - Semantic HTML
 - Proper labels and htmlFor usage
@@ -30,14 +30,14 @@ Accessibility
     `aria-label="On Click"` added to submit button
 - Keyboard navigable
 
-UI
+### UI
 
 - Clean, modern Tailwind CSS styling
 - Responsive layout
 - Form centered on screen
 
 
-### Technologies Used
+## Technologies Used
 
 - React
 - React Router
@@ -46,20 +46,7 @@ UI
 - React Testing Library
 - Create React App (CRA)
 
-### Project Structure
-
-src/
-├── components/
-│   ├── BookingForm.js
-│   ├── BookingPage.js
-│   └── ConfirmedBooking.js
-├── App.js
-├── Main.js
-├── index.js
-├── index.css
-└── setupTests.js
-
-### Running the Project
+## Running the Project
 
 1. Install dependencies
 ### `npm install`
@@ -70,7 +57,7 @@ src/
 The app will be available at:
 [http://localhost:3000](http://localhost:3000)
 
-### Running Tests
+## Running Tests
 
 This project includes unit tests for:
 
@@ -83,7 +70,7 @@ Run the tests using:
 ### `npm test`
 
 
-### How the Booking System Works
+## How the Booking System Works
 
 - Main.js initializes available times
 - updateTimes() reducer updates times based on chosen date
@@ -91,11 +78,11 @@ Run the tests using:
 - BookingForm manages form inputs, validation, and user interaction
 - Redirects to ConfirmedBooking after successful reservation
 
-### Building for Production
+## Building for Production
 ### `npm run build`
 
 This generates the optimized React production build.
 
-### License
+## License
 
 This project is part of the Meta Front-End Developer Professional Certificate Capstone and is for educational purposes.
