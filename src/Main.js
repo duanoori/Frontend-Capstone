@@ -1,6 +1,9 @@
-import fetchAPI from "./api";
 import React, {useReducer} from "react";
 import BookingPage from "./components/BookingPage";
+import ConfirmedBooking from "./components/ConfirmedBooking";
+
+import {fetchAPI, submitAPI} from "./api";
+import { useNavigate } from "react-router-dom";
 
 function initializeTimes() {
     const today = new Date();
@@ -16,12 +19,21 @@ function updateTimes(state, action) {
 }
 
 function Main() {
+    const navigate = useNavigate();
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+
+    function submitForm(formData) {
+        if (submitAPI(formData)) {
+            navigate("/confirmed");
+        }
+    }
+
     return (
         <div>
         <BookingPage 
         availableTimes={availableTimes}
         dispatch={dispatch}
+        submitForm={submitForm}
         />
         </div>
     );
