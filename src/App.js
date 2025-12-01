@@ -7,6 +7,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
         </Routes>
       </Router>
     </>
