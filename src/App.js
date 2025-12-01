@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Main from './Main';
+import ConfirmedBooking from './components/ConfirmedBooking';
 
 function App() {
   return (
