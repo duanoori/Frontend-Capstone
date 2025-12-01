@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 
 function BookingForm({ availableTimes, dispatch , submitForm}) {
   const [date, setDate] = useState("");
@@ -6,6 +6,18 @@ function BookingForm({ availableTimes, dispatch , submitForm}) {
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
+
+  const [formValid, setFormValid] = useState(false);
+
+  useEffect(() => {
+    const isValid =
+      date !== "" &&
+      time !== "" &&
+      guests >= 1 &&
+      guests <= 10 &&
+      occasion !== "";
+    setFormValid(isValid);
+  }, [date, time, guests, occasion]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,12 +82,14 @@ function BookingForm({ availableTimes, dispatch , submitForm}) {
         id="occasion"
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
+        required
       >
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
 
-      <button type="submit">Submit reservation</button>
+      <button type="submit" disabled={!formValid}>
+        Submit reservation</button>
     </form>
   );
 }
