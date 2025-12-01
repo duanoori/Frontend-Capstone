@@ -83,6 +83,11 @@ Run the tests using:
 
 This generates the optimized React production build.
 
+## Screenshots
+<img width="984" height="845" alt="image" src="https://github.com/user-attachments/assets/1862f725-c1fa-4773-b70c-4d583f6c5920" />
+<img width="754" height="362" alt="image" src="https://github.com/user-attachments/assets/fdd47981-4d55-4179-9b45-b730dbb4e580" />
+
+
 ## License
 
 This project is part of the Meta Front-End Developer Professional Certificate Capstone and is for educational purposes.
